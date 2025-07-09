@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos | Gabriela Marques</title>
+    <link rel="icon" href="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Definição de variáveis CSS para cores - Mantendo a estética "gamer" */
+            --cor-fundo: #121212;
+            --cor-texto-principal: #e0e0e0;
+            --cor-destaque-primaria: #00bcd4; /* Ciano mais profissional */
+            --cor-destaque-secundaria: #6200ea; /* Roxo elegante */
+            --cor-borda-gif: #ffeb3b; /* Amarelo da borda do GIF (mesmo que não tenha GIF aqui, mantém a paleta) */
+            --cor-botoes: #3f0097; /* Roxo escuro para o botão */
+            --cor-borda-botoes: #6200ea; /* Roxo do botão */
+            --cor-hover-botoes: #9c27b0; /* Roxo mais claro no hover */
+            --cor-rodape-fundo: rgba(0, 0, 0, 0.8);
+            --cor-rodape-borda: #f44336; /* Vermelho para o rodapé */
+
+            /* Cores específicas para os cards de projeto, adaptadas à estética */
+            --cor-card-fundo: #1a1a1a; /* Um pouco mais claro que o fundo principal */
+            --cor-card-borda: #00bcd4; /* Borda ciano */
+            --cor-card-sombra: rgba(0, 0, 0, 0.6);
+            --cor-card-link-fundo: #6200ea; /* Roxo para o botão do link */
+            --cor-card-link-hover: #9c27b0; /* Roxo mais claro no hover do botão do link */
+        }
+
+        body {
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto-principal);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            justify-content: flex-start;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cabecalho-principal {
+            font-family: 'Pixelify Sans', cursive;
+            font-size: 3.5em;
+            font-weight: 700;
+            color: var(--cor-destaque-primaria);
+            text-shadow: 2px 2px 4px rgba(0, 188, 212, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 0.08em;
+        }
+
+        .subtitulo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3em;
+            color: var(--cor-texto-principal);
+            font-weight: 400;
+            margin-top: -15px;
+        }
+
+        .section-container {
+            margin-bottom: 50px;
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+            background-color: rgba(0, 188, 212, 0.08); /* Fundo sutil */
+            border: 1px solid rgba(0, 188, 212, 0.3); /* Borda sólida mais discreta */
+            padding: 30px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-family: 'Press Start 2P', monospace;
+            font-size: 1.8em;
+            color: var(--cor-destaque-secundaria);
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Estilos para os cards de projeto */
+        .projetos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            justify-items: center;
+        }
+
+        .projeto-card {
+            background-color: var(--cor-card-fundo);
+            border: 2px solid var(--cor-card-borda); /* Borda mais evidente */
+            border-radius: 8px;
+            box-shadow: 0 5px 15px var(--cor-card-sombra); /* Sombra mais pronunciada */
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .projeto-card:hover {
+            transform: translateY(-8px); /* Efeito de "levantar" mais acentuado */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Sombra maior no hover */
+        }
+
+        .projeto-card > a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .projeto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--cor-card-borda); /* Borda na imagem */
+            filter: brightness(0.8); /* Escurece um pouco a imagem para o texto sobressair */
+            transition: filter 0.3s ease;
+        }
+
+        .projeto-card:hover img {
+            filter: brightness(1); /* Tira o escurecimento no hover */
+        }
+
+        .projeto-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Adicionado para centralizar o conteúdo, incluindo o botão */
+            align-items: center; /* Centraliza horizontalmente os itens flex */
+            text-align: center; /* Centraliza o texto dentro dos itens flexíveis */
+        }
+
+        .projeto-info h3 {
+            font-family: 'Press Start 2P', monospace; /* Título do projeto com fonte retrô */
+            font-size: 1.5em;
+            color: var(--cor-destaque-primaria); /* Ciano para o título do card */
+            margin-top: 0;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.05em;
+            text-align: center; /* Garante que o título esteja centralizado */
+        }
+
+        .projeto-info p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            color: var(--cor-texto-principal);
+            line-height: 1.7;
+            margin-bottom: 15px;
+            text-align: center; /* Garante que o parágrafo esteja centralizado */
+        }
+
+        .projeto-info .link-projeto {
+            display: inline-block; /* Mantém como inline-block */
+            margin-top: auto;
+            padding: 10px 20px;
+            background-color: var(--cor-card-link-fundo); /* Roxo para o botão do link */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            font-family: 'Press Start 2P', monospace; /* Texto do link com fonte retrô */
+            letter-spacing: 0.05em;
+            border: 2px solid var(--cor-borda-botoes); /* Borda nos botões */
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+            /* Removido text-align: center; daqui, pois o align-items fará isso */
+            /* Adicionado para centralizar o botão em relação ao seu contêiner flexível */
+            align-self: center; /* Centraliza o item individualmente em um contêiner flex */
+        }
+
+        .projeto-info .link-projeto:hover {
+            background-color: var(--cor-card-link-hover);
+            transform: translateY(-3px); /* Efeito de "levantar" no hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--cor-rodape-fundo);
+            width: 100%;
+            box-sizing: border-box;
+            border-top: 1px solid var(--cor-rodape-borda);
+            font-size: 0.75em;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: auto;
+        }
+
+        /* Media Queries para Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            .cabecalho-principal {
+                font-size: 2.8em;
+            }
+
+            .subtitulo {
+                font-size: 1.1em;
+            }
+
+            .section-container {
+                padding: 20px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            .projetos-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .projeto-card img {
+                height: 180px;
+            }
+
+            .projeto-info h3 {
+                font-size: 1.3em;
+            }
+
+            .projeto-info p {
+                font-size: 0.95em;
+            }
+
+            .projeto-info .link-projeto {
+                font-size: 0.85em;
+                padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .cabecalho-principal {
+                font-size: 2em;
+                margin-bottom: 15px;
+            }
+
+            .subtitulo {
+                font-size: 0.9em;
+            }
+
+            .section-title {
+                font-size: 1.2em;
+            }
+
+            .projeto-card img {
+                height: 150px;
+            }
+
+            .projeto-info h3 {
+                font-size: 1.1em;
+            }
+
+            .projeto-info p {
+                font-size: 0.9em;
+            }
+
+            .projeto-info .link-projeto {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+
+            footer {
+                font-size: 0.65em;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="cabecalho-principal">Meus Projetos</h1>
+    </header>
+
+    <section class="section-container">
+        <h2 class="section-title">Portfólio de Desenvolvimentos</h2>
+        <div class="projetos-grid">
+            <div class="projeto-card">
+                <a href="https://sites.google.com/estudante.sed.sc.gov.br/tanamedida/in%C3%ADcio" target="_blank" rel="noopener noreferrer">
+                    <div class="projeto-info">
+                        <h3>Tá na Medida!</h3>
+                        <span class="link-projeto">Ver Projeto</span>
+                    </div>
+                </a>
+                <a href="https://tanamedida.onrender.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="projeto-info">
+                        <h3>Aplicativo</h3>
+                        <span class="link-projeto">Ver app</span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/ta.na.medida?igsh=MXUzbzQybGM3c2ZsMA==" target="_blank" rel="noopener noreferrer">
+                    <div class="projeto-info">
+                        <h3>Instagram do Projeto</h3>
+                        <span class="link-projeto">Ver página</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="projeto-card">
+                <a href="https://sites.google.com/estudante.sed.sc.gov.br/agilmanifesto/in%C3%ADcio" target="_blank" rel="noopener noreferrer">
+                    <div class="projeto-info">
+                        <h3>Site sobre o Manifesto Ágil</h3>
+                        <span class="link-projeto">Ver Projeto</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="projeto-card">
+                <a href="https://sites.google.com/estudante.sed.sc.gov.br/deepfake-vivo/in%C3%ADcio" target="_blank" rel="noopener noreferrer">
+                    <div class="projeto-info">
+                        <h3>Site sobre DeepFake - desafio de dados vivo 2025</h3>
+                        <span class="link-projeto">Ver projeto</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
