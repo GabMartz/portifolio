@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Gabriela Marques</title> <link rel="icon" href="https://win98icons.alexmeub.com/icons/png/msie1-1.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Definição de variáveis CSS para cores */
+      --cor-fundo: #121212;
+      --cor-texto-principal: #e0e0e0;
+      --cor-destaque-primaria: #00bcd4; /* Ciano mais profissional */
+      --cor-destaque-secundaria: #6200ea; /* Roxo elegante */
+      --cor-borda-gif: #ffeb3b; /* Amarelo da borda do GIF */
+      --cor-botoes: #3f0097; /* Roxo escuro para o botão */
+      --cor-borda-botoes: #6200ea; /* Roxo do botão */
+      --cor-hover-botoes: #9c27b0; /* Roxo mais claro no hover */
+      --cor-rodape-fundo: rgba(0, 0, 0, 0.8);
+      --cor-rodape-borda: #f44336; /* Vermelho para o rodapé */
+    }
+
+    body {
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto-principal);
+      font-family: 'Inter', sans-serif; /* Fonte mais profissional para o corpo */
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px; /* Padding ajustado para responsividade */
+      box-sizing: border-box;
+      justify-content: space-between;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra de texto mais sutil */
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 50px; /* Mais espaço abaixo do cabeçalho */
+    }
+
+    .cabecalho-principal {
+      font-family: 'Pixelify Sans', cursive;
+      font-size: 3.5em; /* Tamanho ajustado */
+      font-weight: 700;
+      color: var(--cor-destaque-primaria);
+      text-shadow: 2px 2px 4px rgba(0, 188, 212, 0.5); /* Sombra que combina com a cor de destaque */
+      margin-bottom: 20px;
+      letter-spacing: 0.08em; /* Ajuste no espaçamento da letra */
+    }
+
+    .subtitulo {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.3em;
+      color: var(--cor-texto-principal);
+      font-weight: 400;
+      margin-top: -15px; /* Alinha mais perto do título */
+    }
+
+    .gif-container {
+      position: relative;
+      border: 3px solid var(--cor-borda-gif); /* Borda mais fina */
+      padding: 8px;
+      margin-bottom: 40px; /* Mais espaço para a próxima seção */
+      max-width: 90%; /* Garante que o container se ajuste */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Sombra mais suave */
+    }
+
+    .gif-container img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 3px; /* Leve arredondamento nas bordas do GIF */
+    }
+
+    .gif-container .welcome-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Pixelify Sans', cursive;
+      font-size: 2em; /* Tamanho ajustado */
+      color: var(--cor-destaque-primaria);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+      padding: 5px 15px; /* Padding para melhor legibilidade */
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
+      border-radius: 5px;
+    }
+
+    .section-container {
+      margin-bottom: 50px;
+      width: 90%;
+      max-width: 800px; /* Largura máxima maior para conteúdo */
+      text-align: center;
+      background-color: rgba(0, 188, 212, 0.08); /* Fundo mais sutil */
+      border: 1px solid rgba(0, 188, 212, 0.3); /* Borda sólida mais discreta */
+      padding: 30px; /* Mais padding */
+      box-sizing: border-box;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-title {
+      font-family: 'Press Start 2P', monospace; /* Títulos de seção com fonte retrô */
+      font-size: 1.8em;
+      color: var(--cor-destaque-secundaria);
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .section-content {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1em; /* Tamanho da fonte para o conteúdo */
+      line-height: 1.7;
+      margin: 0;
+      color: var(--cor-texto-principal);
+    }
+
+    .botoes-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px; /* Espaçamento ajustado */
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+      width: 90%;
+      max-width: 900px;
+    }
+
+    button {
+      padding: 12px 25px; /* Padding ajustado */
+      border: 2px solid var(--cor-borda-botoes); /* Borda mais fina */
+      border-radius: 6px; /* Arredondamento sutil */
+      background-color: var(--cor-botoes);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5); /* Sombra mais suave */
+      cursor: pointer;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 0.85em; /* Tamanho da fonte ajustado */
+      text-align: center;
+      width: 170px; /* Largura um pouco menor */
+      min-height: 120px; /* Altura mínima para consistência */
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Adicionado transform para hover */
+    }
+
+    button:hover {
+      background-color: var(--cor-hover-botoes);
+      transform: translateY(-5px); /* Efeito de "levantar" */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Sombra mais pronunciada no hover */
+    }
+
+    button a {
+      text-decoration: none;
+      color: inherit;
+      display: flex; /* Flexbox para alinhar conteúdo interno */
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    button img {
+      display: block;
+      max-width: 60px; /* Tamanho fixo para ícones */
+      max-height: 60px;
+      object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+      border-radius: 3px;
+      margin-bottom: 10px; /* Mais espaço entre imagem e texto */
+      filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.7));
+    }
+
+    button span {
+      font-family: 'Inter', sans-serif; /* Texto do botão com fonte profissional */
+      font-size: 0.9em;
+      color: var(--cor-texto-principal);
+      text-transform: uppercase; /* Texto em maiúsculas para destaque */
+      letter-spacing: 0.05em;
+      font-weight: 600; /* Negrito sutil */
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px; /* Mais padding */
+      background-color: var(--cor-rodape-fundo);
+      width: 100%;
+      box-sizing: border-box;
+      border-top: 1px solid var(--cor-rodape-borda); /* Borda mais fina */
+      font-size: 0.75em; /* Tamanho da fonte ajustado */
+      color: rgba(255, 255, 255, 0.7); /* Cor do texto do rodapé mais suave */
+      margin-top: auto; /* Garante que o rodapé fique no final */
+    }
+
+    /* Media Queries para Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      .cabecalho-principal {
+        font-size: 2.8em;
+      }
+
+      .subtitulo {
+        font-size: 1.1em;
+      }
+
+      .gif-container .welcome-text {
+        font-size: 1.5em;
+        padding: 5px 10px;
+      }
+
+      .section-container {
+        padding: 20px;
+      }
+
+      .section-title {
+        font-size: 1.5em;
+      }
+
+      .section-content {
+        font-size: 1em;
+      }
+
+      .botoes-container {
+        gap: 20px;
+      }
+
+      button {
+        width: 140px;
+        min-height: 100px;
+        padding: 10px 20px;
+        font-size: 0.75em;
+      }
+
+      button img {
+        max-width: 50px;
+        max-height: 50px;
+        margin-bottom: 8px;
+      }
+
+      button span {
+        font-size: 0.8em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      .cabecalho-principal {
+        font-size: 2em;
+        margin-bottom: 15px;
+      }
+
+      .subtitulo {
+        font-size: 0.9em;
+      }
+
+      .gif-container .welcome-text {
+        font-size: 1.1em;
+      }
+
+      .section-container {
+        padding: 15px;
+      }
+
+      .section-title {
+        font-size: 1.2em;
+      }
+
+      .section-content {
+        font-size: 0.9em;
+      }
+
+      .botoes-container {
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      button {
+        width: 120px;
+        min-height: 90px;
+        padding: 8px 15px;
+        font-size: 0.7em;
+      }
+
+      button img {
+        max-width: 40px;
+        max-height: 40px;
+        margin-bottom: 5px;
+      }
+
+      button span {
+        font-size: 0.7em;
+      }
+
+      footer {
+        font-size: 0.65em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="cabecalho-principal">Gabriela Marques</h1> </header>
+
+  <div class="gif-container">
+    <img src="https://i.pinimg.com/originals/58/5f/b8/585fb871dc5698ad1b71f838072cc335.gif" alt="Gráfico animado de boas-vindas">
+    <div class="welcome-text">BEM-VINDOS</div>
+  </div>
+
+  <section class="section-container">
+    <h2 class="section-title">Sobre Mim</h2>
+    <p class="section-content">
+      Oie! Eu me chamo Gabriela Marques Nitz, atualmente estou cursando ciência de dados no CEDUP Perfeito Manoel de Aguiar em Guaramirim - SC. 
+    </p>
+  </section>
+
+  <section class="section-container">
+    <h2 class="section-title">Veja mais</h2>
+    <div class="botoes-container">
+      <button>
+        <a href="file:///C:/Users/GABRIELAMARQUESNITZ/OneDrive%20-%20CEDUP%20Perfeito%20Manoel%20de%20Aguiar/Portifolio/Curr%C3%ADculo.pdf" target="_blank" rel="noopener noreferrer">
+          <img src="https://win98icons.alexmeub.com/icons/png/notepad-2.png" alt="Ícone do Spotify">
+          <span>Currículo</span>
+        </a>
+      </button>
+    
+      <button>
+        <a href="file:///C:/Users/GABRIELAMARQUESNITZ/OneDrive%20-%20CEDUP%20Perfeito%20Manoel%20de%20Aguiar/Portifolio/Projetos.html" target="_blank" rel="noopener noreferrer">
+          <img src="https://win98icons.alexmeub.com/icons/png/directory_open_file_mydocs-4.png" alt="Ícone de Projetos" style="width: 60px; height: 60px;"> <span>Meus Projetos</span>
+        </a>
+      </button>
+    </div>
+  </section>
+
+</body>
+</html>
